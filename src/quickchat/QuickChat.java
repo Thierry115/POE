@@ -28,7 +28,20 @@ class Login {
             return false;
         }
     boolean CheckId(){
+        if (id!= null && id.length() ==13) if (!id.matches("\\d{13}")) {
+            System.out.print("The id must contain only digits.");
+            return false;
+        }else {
             return true;
+                    
+        }else {
+            System.out.print("The id must be exactly 13 characters long.");
+            
+            
+            return false;
+        }
+            
+                    
     }
 }
 
