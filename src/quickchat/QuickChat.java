@@ -27,8 +27,8 @@ class Login {
         }
             return false;
         }
-    boolean CheckId(){
-        if (id!= null && id.length() ==13) if (!id.matches("\\d{13}")) {
+    boolean CheckId(String id){
+        if ( =  id.length() ==13) if (!id.matches("\\d{13}")) {
             System.out.print("The id must contain only digits.");
             return false;
         }else {
@@ -44,6 +44,25 @@ class Login {
                     
     }
 }
+// we are checking phone number validatiom
+public boolean checkcellphonenumber(String number){
+ 
+    // the number must start with an international code and a max of 10 digits after the code
+ // example : +27  123456789
+ 
+      if (number.matches("^\\+\\d{1,3}\\d{1,10}$")) {
+  
+         return true ;
+} else {
+System.out.print("Invalid phone number ");
+return false;
+}
+}
+
+
+ 
+
+
 
 
 
@@ -53,6 +72,27 @@ class Login {
  * @author Student
  */
 public class QuickChat {
+String username;
+String password;
+String firstname;
+String lastname;
+
+public QuickChat(String username, String password, String firstname, String lastname) {
+this.username = username;
+this.password = password;
+this.firstname = firstname;
+this.lastname = lastname;
+
+}
+
+//we are verifying login
+public String loginUser(String enteredUser, String enteredPass) {
+ if (enteredUser.equals(username) && enteredPass.equals(password)) {
+ return "Welcome" + firstname + "" + lastname + "It is great to see you again.";
+ 
+ }
+ return "Username or password incorrect,please try again";
+}
 
     /**
      * @param args the command line arguments
